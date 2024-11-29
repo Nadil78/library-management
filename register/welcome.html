@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Library</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #eee;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .welcome-container {
+            max-width: 800px;
+            margin: auto;
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .welcome-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(135deg, #ffbb33, #ff8800);
+            opacity: 0.2;
+            z-index: -1;
+            transform: rotate(45deg);
+        }
+        h1 {
+            color: #ffbb33;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #ff8800;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .section p {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        .card {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        .card img {
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        .card h3 {
+            color: #ffbb33;
+            margin-top: 0;
+        }
+        .card p {
+            color: #bbb;
+            margin-bottom: 0;
+        }
+        .footer {
+            margin-top: 30px;
+            padding: 10px;
+            text-align: center;
+            background-color: #212121;
+            color: #bbb;
+            border-radius: 8px;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="welcome-container">
+    <h1>Welcome to Our Library</h1>
+    <div class="section">
+        <h2>Competitions</h2>
+        <div class="card">
+            <img src="https://via.placeholder.com/60" alt="Competition Icon">
+            <div>
+                <h3>Reading Marathon</h3>
+                <p>Join our monthly reading marathon and compete with other members to see who can read the most books. Top readers win exciting prizes!</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/60" alt="Competition Icon">
+            <div>
+                <h3>Book Review Contest</h3>
+                <p>Submit your book reviews and stand a chance to win rewards. The best reviews will be featured on our website.</p>
+            </div>
+        </div>
+        <!-- Add more competition cards as needed -->
+    </div>
+    <div class="section">
+        <h2>Rewards for Reading</h2>
+        <div class="card">
+            <img src="https://via.placeholder.com/60" alt="Reward Icon">
+            <div>
+                <h3>Points System</h3>
+                <p>Earn points for every book you read. Redeem points for rewards like discounts on book purchases, free memberships, and more.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/60" alt="Reward Icon">
+            <div>
+                <h3>Exclusive Events</h3>
+                <p>Get invited to exclusive library events and author meet-and-greets by accumulating reading points.</p>
+            </div>
+        </div>
+        <!-- Add more reward cards as needed -->
+    </div>
+    <div class="section">
+        <h2>Badges</h2>
+        <div class="card">
+            <img src="https://via.placeholder.com/60" alt="Badge Icon">
+            <div>
+                <h3>Reading Champion</h3>
+                <p>Earn this badge by reading 50 books in a year. Show off your achievement in your profile.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/60" alt="Badge Icon">
+            <div>
+                <h3>Book Reviewer</h3>
+                <p>Get this badge by submitting 10 detailed book reviews. Your badge will be displayed on your profile.</p>
+            </div>
+        </div>
+        <!-- Add more badge cards as needed -->
+    </div>
+    <!-- Add more sections as needed -->
+    <div class="footer">
+        <p>&copy; 2024 Library Management System</p>
+    </div>
+</div>
+
+</body>
+</html>

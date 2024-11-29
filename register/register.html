@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management - Register</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #eee;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .register-container {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+        }
+        .register-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffbb33;
+        }
+        .form-field {
+            margin-bottom: 20px;
+        }
+        .form-field label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #ffbb33;
+        }
+        .form-field input, .form-field select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: #333;
+            color: #fff;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        .form-field input:focus, .form-field select:focus {
+            border-color: #ffbb33;
+        }
+        .register-button {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #ffbb33, #ff8800);
+            color: white;
+            border: none;
+            transition: background 0.3s ease, transform 0.2s;
+        }
+        .register-button:hover {
+            background: linear-gradient(135deg, #ff8800, #ffbb33);
+            transform: scale(1.05);
+        }
+        .message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            display: none;
+        }
+        .message.success {
+            color: #28a745;
+        }
+        .message.error {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+
+<div class="register-container">
+    <h2>Register</h2>
+    <form id="registerForm">
+        <div class="form-field">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+        </div>
+        <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-field">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+        <div class="form-field">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+        </div>
+        <div class="form-field">
+            <label for="role">Select Role</label>
+            <select id="role" required>
+                <option value="">Select Role</option>
+                <option value="admin">Admin</option>
+                <option value="staff">Staff</option>
+                <option value="member">Library Member</option>
+            </select>
+        </div>
+        <button type="submit" class="register-button">Register</button>
+        <p class="message" id="message"></p>
+    </form>
+</div>
+
+<script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const role = document.getElementById('role').value;
+        const message = document.getElementById('message');
+        
+        // Simple validation for demonstration
+        if (username && email && password && confirmPassword && role) {
+            if (password === confirmPassword) {
+                message.textContent = 'Registration successful!';
+                message.className = 'message success';
+                message.style.display = 'block';
+                
+                // Redirect to the welcome page
+                setTimeout(() => {
+                    window.location.href = 'welcome.html';
+                }, 1000); // Simulate a delay for user feedback
+            } else {
+                message.textContent = 'Passwords do not match';
+                message.className = 'message error';
+                message.style.display = 'block';
+            }
+        } else {
+            message.textContent = 'Please fill in all fields';
+            message.className = 'message error';
+            message.style.display = 'block';
+        }
+    });
+</script>
+
+</body>
+</html>
